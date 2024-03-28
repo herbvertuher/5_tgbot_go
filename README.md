@@ -11,7 +11,7 @@ git clone https://github.com/herbvertuher/5_tgbot_go.git
 
 Navigate to the project directory:
 ```shell
-cd /5_tgbot_go
+cd ./5_tgbot_go
 ```
 
 Build and run the bot:
