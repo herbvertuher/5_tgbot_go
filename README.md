@@ -16,7 +16,7 @@ cd ./5_tgbot_go
 
 Build and run the bot:
 ```shell
-go build | ./kbot start
+go build && ./kbot start
 ```
 
 ## Usage
