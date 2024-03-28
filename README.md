@@ -1,5 +1,6 @@
 # Test Telegram Bot in Golang
 This is a simple Telegram bot implemented in Golang using the Cobra CLI library and the telebot package.
+Bot: t.me/sadowoqdqws_bot
 
 ## Installation
 To run this bot, you need to have Go installed on your system. You can install it from [here](https://go.dev/doc/install).
