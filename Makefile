@@ -2,7 +2,22 @@ APP := $(shell basename $(shell git remote get-url origin))
 REGISTRY := herbvertuher
 VERSION=$(shell git describe --tags --abbrev=0 --tags)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux #linux darwin windows
-TARGETARCH=amd64 #amd64 arm64
+TARGETARCH=amd64 #arm64 amd64
+
+linux:
+	$(eval TARGETOS := linux)
+
+darwin:
+	$(eval TARGETOS := darwin)
+
+windows:
+	$(eval TARGETOS := windows)
+
+arm:
+	$(eval TARGETARCH := arm64)
+
+amd:
+	$(eval TARGETARCH := amd64)
 
 format:
 	gofmt -s -w ./
