@@ -2,7 +2,7 @@ APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=herbvertuher
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
-TARGETARCH=386
+TARGETARCH=arm64
 
 format:
 	gofmt -s -w ./
