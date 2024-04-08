@@ -1,5 +1,5 @@
-APP := $(shell basename $(shell git remote get-url origin))
-REGISTRY := herbvertuher
+APP=$(shell basename $(shell git remote get-url origin))
+REGISTRY=herbvertuher
 VERSION=$(shell git describe --tags --abbrev=0 --tags)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux #linux darwin windows
 TARGETARCH=amd64 #amd64 arm64
@@ -42,4 +42,4 @@ push:
 
 clean:
 	rm -rf kbot
-	docker rmi -f ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
