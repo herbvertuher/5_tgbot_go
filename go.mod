@@ -1,6 +1,6 @@
-module github.com/herbvertuher/kbot
+module github.com/herbvertuher/5_tgbot_go
 
-go 1.22.1
+go 1.20
 
 require (
 	github.com/spf13/cobra v1.8.0
