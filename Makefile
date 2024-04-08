@@ -16,19 +16,21 @@ test:
 get:
 	go get
 
+arm:
+	GOOS=arm64
+	make build
 
-arm: format get
-	CGO_ENABLED=0 GOOS=$(TARGETOS) GOARCH=arm64 go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
+linux:
+	GOOS=linux
+	make build
 
-linux: format get
-	CGO_ENABLED=0 GOOS=linux GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
+darwin:
+	GOOS=darwin
+	make build
 
-darwin: format get
-	CGO_ENABLED=0 GOOS=darwin GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
-
-windows: format get
-	CGO_ENABLED=0 GOOS=windows GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
-
+windows:
+	GOOS=windows
+	make build
 
 build: format get
 	CGO_ENABLED=0 GOOS=$(TARGETOS) GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
