@@ -20,16 +20,20 @@ build: format get
 	CGO_ENABLED=0 GOOS=$(TARGETOS) GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/$(REGISTRY)/5_tgbot_go/cmd.appVersion=${VERSION}
 
 arm:
-	GOOS=arm64 make build
+	$(eval TARGETARCH := arm64)
+	make build
 
 linux:
-	GOOS=linux make build
+	$(eval TARGETOS := linux)
+	make build
 
 darwin:
-	GOOS=darwin make build
+	$(eval TARGETOS := darwin)
+	make build
 
 windows:
-	GOOS=windows make build
+	$(eval TARGETOS := windows)
+	make build
 
 
 image:
