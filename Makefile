@@ -16,24 +16,21 @@ test:
 get:
 	go get
 
+build: format get
+	CGO_ENABLED=0 GOOS=$(TARGETOS) GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/$(REGISTRY)/5_tgbot_go/cmd.appVersion=${VERSION}
+
 arm:
-	GOOS=arm64
-	make build
+	GOOS=arm64 make build
 
 linux:
-	GOOS=linux
-	make build
+	GOOS=linux make build
 
 darwin:
-	GOOS=darwin
-	make build
+	GOOS=darwin make build
 
 windows:
-	GOOS=windows
-	make build
+	GOOS=windows make build
 
-build: format get
-	CGO_ENABLED=0 GOOS=$(TARGETOS) GOARCH=$(TARGETARCH) go build -v -o kbot -ldflags "-X="github.com/herbvertuher/kbot/cmd.appVersion=${VERSION}
 
 image:
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
