@@ -5,16 +5,19 @@ TARGETOS=linux #linux darwin windows
 TARGETARCH=arm64 #amd64 arm64
 
 linux:
-	GOOS=linux make build
+	CGO_ENABLED=0 GOOS=linux GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/herbvertuher/5_tgbot_go/cmd.appVersion=${VERSION}
 
 darwin:
-	GOOS=darwin make build
+	CGO_ENABLED=0 GOOS=darwin GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/herbvertuher/5_tgbot_go/cmd.appVersion=${VERSION}
 
 windows:
-	GOOS=windows make build
+	CGO_ENABLED=0 GOOS=windows GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/herbvertuher/5_tgbot_go/cmd.appVersion=${VERSION}
 
 arm:
-	GOARCH=arm64 make build
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=arm64 go build -v -o kbot -ldflags "-X="github.com/herbvertuher/5_tgbot_go/cmd.appVersion=${VERSION}
+
+amd:
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=amd64 go build -v -o kbot -ldflags "-X="github.com/herbvertuher/5_tgbot_go/cmd.appVersion=${VERSION}
 
 format:
 	gofmt -s -w ./
