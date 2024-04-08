@@ -5,19 +5,19 @@ TARGETOS=linux #linux darwin windows
 TARGETARCH=amd64 #amd64 arm64
 
 linux:
-	$(eval TARGETOS := linux)
+	$(eval TARGETOS := linux) make build
 
 darwin:
-	$(eval TARGETOS := darwin)
+	$(eval TARGETOS := darwin) make build
 
 windows:
-	$(eval TARGETOS := windows)
+	$(eval TARGETOS := windows) make build
 
 arm:
-	$(eval TARGETARCH := arm64)
+	$(eval TARGETARCH := arm64) make build
 
 amd:
-	$(eval TARGETARCH := amd64)
+	$(eval TARGETARCH := amd64) make build
 
 format:
 	gofmt -s -w ./
