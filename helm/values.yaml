@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: "ghcr.io/herbvertuher/5_tgbot_go"
-  tag: "v1.0.13-ec7204d"
+  tag: "v1.0.14-213676e"
   arch: "amd64"
 secret:
   name: "kbot"
