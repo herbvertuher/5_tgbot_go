@@ -24,7 +24,7 @@ jobs:
 
       - name: Build & Push
         env:
-          APP: "kbot"
+          APP: "5_tgbot_go"
           REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
         run: make image push
 
