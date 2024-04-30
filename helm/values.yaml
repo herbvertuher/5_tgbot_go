@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "herbvertuher/5_tgbot_go"
-  tag: "v1.0.17-e1af920"
+  tag: "v1.0.17-c84b15a"
   os: "linux"
   arch: "amd64"
 secret:
