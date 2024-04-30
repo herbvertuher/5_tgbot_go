@@ -1,8 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin))
 VERSION=$(shell git describe --tags --abbrev=0 --tags)-$(shell git rev-parse --short HEAD)
 REGISTRY=ghcr.io/herbvertuher
-TARGETOS=linux #linux darwin windows
-TARGETARCH=amd64 #amd64 arm64
+TARGETOS=linux#linux darwin windows
+TARGETARCH=amd64#amd64 arm64
 
 
 format:
