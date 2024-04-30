@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: "herbvertuher"
+  repository: "ghcr.io/herbvertuher/5_tgbot_go"
   tag: "v1.0.13-ec7204d"
   arch: "amd64"
 secret:
